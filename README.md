@@ -13,7 +13,7 @@
 - To run a test accessing a local URL on BrowserStack, run `npm run browserstack-local`
 - To run parallel tests accessing a local URL on BrowserStack, run `npm run browserstack-local-parallel`
 - To run tests on real mobile devices at BrowserStack, run `npm run browserstack-mobile`
-- To run test using wdio image comparison service on BrowserStack, run `npm run screen-compare`
+- [WIP]To run test using wdio image comparison service on BrowserStack, run `npm run screen-compare`
 
 ## Notes
 * You can view your test results on the [BrowserStack automate dashboard](https://automate.browserstack.com/dashboard/v2)
