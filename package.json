@@ -1,0 +1,31 @@
+{
+  "name": "wdio-sample",
+  "version": "1.0.0",
+  "description": "WebdriverIO Sample",
+  "main": "index.js",
+  "scripts": {
+    "test": "wdio ./conf/local.conf.js",
+    "browserstack-single": "wdio ./conf/browserstack_single.conf.js",
+    "browserstack-parallel": "wdio ./conf/browserstack_parallel.conf.js",
+    "browserstack-mobile": "wdio ./conf/browserstack_mobile.conf.js",
+    "browserstack-local": "wdio ./conf/browserstack_local.conf.js",
+    "browserstack-local-parallel": "wdio ./conf/browserstack_local_parallel.conf.js",
+    "screen-compare": "wdio ./conf/bs_wdio_image_compare.conf.js"
+  },
+  "author": "Ashwin G",
+  "license": "ISC",
+  "dependencies": {
+    "@wdio/cli": "^6.1.12"
+  },
+  "devDependencies": {
+    "@wdio/browserstack-service": "^6.1.10",
+    "@wdio/local-runner": "^6.1.12",
+    "@wdio/mocha-framework": "^6.1.8",
+    "@wdio/selenium-standalone-service": "^6.0.16",
+    "@wdio/spec-reporter": "^6.1.12",
+    "@wdio/sync": "^6.1.8",
+    "chromedriver": "^81.0.0",
+    "wdio-chromedriver-service": "^6.0.3",
+    "wdio-image-comparison-service": "^1.13.6"
+  }
+}
