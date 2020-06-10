@@ -1,4 +1,4 @@
-# wdio-sample
+# wdio-mocha-sample
 [WebdriverIO](http://webdriver.io/) Integration with BrowserStack.
 
 ## Setup
