@@ -24,6 +24,7 @@
     "@wdio/selenium-standalone-service": "^6.0.16",
     "@wdio/spec-reporter": "^6.1.12",
     "@wdio/sync": "^6.1.8",
-    "wdio-image-comparison-service": "^1.13.6"
+    "wdio-image-comparison-service": "^1.13.6",
+    "wdio-browserstack-reporter": "browserstack/wdio-browserstack-reporter#wdio5"
   }
 }
