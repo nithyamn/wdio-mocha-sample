@@ -7,8 +7,8 @@ exports.config = {
     protocol: 'https',
     path: '/wd/hub',
     
-    user: process.env.BROWSERSTACK_DEMO_USER,
-    key: process.env.BROWSERSTACK_DEMO_KEY,
+    user: process.env.BROWSERSTACK_USERNAME,
+    key: process.env.BROWSERSTACK_ACCESS_KEY,
     
     specs: [
         './test/specs/e2e-login.js'
@@ -49,5 +49,10 @@ exports.config = {
         timeout: 60000
     },
     
-    reporters: ['spec']
+    reporters: ['spec', 'browserstack'],
+    reporterOptions: {
+        browserstack: {
+            outputDir: './'
+        }
+    },
 }
