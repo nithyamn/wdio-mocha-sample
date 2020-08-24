@@ -49,10 +49,5 @@ exports.config = {
         timeout: 60000
     },
     
-    reporters: ['spec', 'browserstack'],
-    reporterOptions: {
-        browserstack: {
-            outputDir: './'
-        }
-    },
+    reporters: ['spec']
 }
