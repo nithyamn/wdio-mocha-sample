@@ -19,7 +19,7 @@ node {
                                '''
             }
         }
-        junit testDataPublishers: [[$class: 'AutomateTestDataPublisher']], testResults: 'browserstack-reports/REPORT*.xml'
+        junit testDataPublishers: [[$class: 'AutomateTestDataPublisher']], testResults: 'browserstack-reports/*.xml'
     }
     
     /*stage('Archive BrowserStack Automate test results') {
