@@ -49,10 +49,25 @@ exports.config = {
         timeout: 60000
     },
     
-    reporters: ['spec', 'browserstack'],
-    reporterOptions: {
-        browserstack: {
-            outputDir: './'
-        }
+     
+    // reporters: ['spec', 'browserstack'],
+    // reporterOptions: {
+    //     browserstack: {
+    //         outputDir: './'
+    //     }
+    // },
+    reporters: [
+        [
+          'browserstack',
+          {
+            outputDir: './tests/reports/browserstack',
+          }
+        ]
+    ],
+
+    beforeTest: function (test, context) {
+        var str = "\"********"+test.title+"*******\";"
+        browser.execute(str)
+        console.log('--- Running test: ' + str);
     }
 }
