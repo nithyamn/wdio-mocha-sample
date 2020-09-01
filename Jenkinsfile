@@ -19,12 +19,12 @@ node {
                                '''
             }
         }
-        junit testDataPublishers: [[$class: 'AutomateTestDataPublisher']], testResults: 'browserstack-reports/*.xml'
+        //junit testDataPublishers: [[$class: 'AutomateTestDataPublisher']], testResults: 'browserstack-reports/*.xml'
     }
     
-    /*stage('Archive BrowserStack Automate test results') {
-        junit testDataPublishers: [[$class: 'AutomateTestDataPublisher']], testResults: 'browserstack-reports/*.xml'
-    }*/
+    stage('Archive BrowserStack Automate test results') {
+        junit testDataPublishers: [[$class: 'AutomateTestDataPublisher']], testResults: './tests/reports/browserstack/*.xml'
+    }
     
     } catch (e) {
         currentBuild.result = 'FAILURE'
