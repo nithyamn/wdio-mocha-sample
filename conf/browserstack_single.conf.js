@@ -69,5 +69,18 @@ exports.config = {
         var str = "\"********"+test.title+"*******\";"
         browser.execute(str)
         console.log('--- Running test: ' + str);
+    },
+
+    afterTest: function (test) {
+        //const filename =  spec[0];
+        //const projectname = `test_${new Date().toLocaleDateString()}`;
+        var request = require('request');
+        const sessionid = browser.sessionId;
+        console.log("Session ID printed: "+sessionid);
+        request({
+            uri: "https://nithyamani3:tnvzsrdzaKJQWhDaAVub@api.browserstack.com/automate/sessions/"+sessionid+".json", 
+            method:"PUT", 
+            form:{"status":"passed","reason":"passsed on purpose"}
+        })
     }
 }
