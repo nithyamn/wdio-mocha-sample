@@ -86,7 +86,7 @@ exports.config = {
         const sessionid = browser.sessionId;
         console.log("Session ID printed: "+sessionid);
         request({
-            uri: "https://nithyamani3:tnvzsrdzaKJQWhDaAVub@api.browserstack.com/automate/sessions/"+sessionid+".json", 
+            uri: "https://username:accesskey@api.browserstack.com/automate/sessions/"+sessionid+".json", 
             method:"PUT", 
             form:{"status":"passed","reason":"passsed on purpose"}
         })
