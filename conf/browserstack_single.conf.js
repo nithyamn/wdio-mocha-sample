@@ -1,3 +1,7 @@
+const sanityTests = [
+    './test/specs/e2e-login.js',
+    './test/specs/google.js'
+];
 exports.config = {
 
     runner: 'local',
@@ -10,9 +14,13 @@ exports.config = {
     user: process.env.BROWSERSTACK_USERNAME,
     key: process.env.BROWSERSTACK_ACCESS_KEY,
     
-    specs: [
-        './test/specs/e2e-login.js'
-    ],
+    // specs: [
+    //     './test/specs/e2e-login.js'
+    // ],
+    specs: ['./test/specs/*.js'],
+    suites: {
+    sanity: sanityTests           
+    },
     
     exclude: [
         // 'path/to/excluded/files'
@@ -49,7 +57,6 @@ exports.config = {
         timeout: 60000
     },
     
-     
     // reporters: ['spec', 'browserstack'],
     // reporterOptions: {
     //     browserstack: {
@@ -66,9 +73,10 @@ exports.config = {
     ],
 
     beforeTest: function (test, context) {
-        var str = "\"********"+test.title+"*******\";"
-        browser.execute(str)
-        console.log('--- Running test: ' + str);
+        //const testName = "\"********Running Test:"+test.title+"*******\";"
+        const testName = '"******** Running test: ' + test.title + ' *******";';
+        browser.execute(testName)
+        console.log('--- Running test: ' + testName)
     },
 
     afterTest: function (test) {
