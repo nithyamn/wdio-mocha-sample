@@ -49,7 +49,7 @@ exports.config = {
     connectionRetryTimeout: 120000,
     connectionRetryCount: 3,
 
-    services: ['browserstack'],
+    //services: ['browserstack'],
     
     framework: 'mocha',
     mochaOpts: {
@@ -72,23 +72,33 @@ exports.config = {
         ]
     ],
 
-    beforeTest: function (test, context) {
+     beforeSession: function (config, capabilities, specs) {
+        var path = specs[0];
+        var testname = path.replace(/^.*[\\/]/, '').replace(/.js/, '');
+        var projectname = `_test_${new Date().toLocaleDateString()}`;
+
+        //console.log("specs:"+testname);
+        capabilities.name = testname;
+        capabilities.project = projectname;
+      },
+
+    beforeTest: function (test, context, capabilities) {
         //const testName = "\"********Running Test:"+test.title+"*******\";"
         const testName = '"******** Running test: ' + test.title + ' *******";';
         browser.execute(testName)
         console.log('--- Running test: ' + testName)
     },
 
-    afterTest: function (test) {
-        //const filename =  spec[0];
+    afterTest: function (test,spec) {
+        const filename =  spec[0];
         //const projectname = `test_${new Date().toLocaleDateString()}`;
         var request = require('request');
         const sessionid = browser.sessionId;
         console.log("Session ID printed: "+sessionid);
         request({
-            uri: "https://username:accesskey@api.browserstack.com/automate/sessions/"+sessionid+".json", 
+            uri: "https://nithyamani3:tnvzsrdzaKJQWhDaAVub@api.browserstack.com/automate/sessions/"+sessionid+".json", 
             method:"PUT", 
-            form:{"status":"passed","reason":"passsed on purpose"}
+            form:{"status":"failed"}
         })
     }
 }
