@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "wdio ./conf/local.conf.js",
-    "browserstack-single": "wdio ./conf/browserstack_single.conf.js",
+    "browserstack-single": "wdio ./conf/browserstack_single.conf.js --suite sanity",
     "browserstack-parallel": "wdio ./conf/browserstack_parallel.conf.js",
     "browserstack-mobile": "wdio ./conf/browserstack_mobile.conf.js",
     "browserstack-local": "wdio ./conf/browserstack_local.conf.js",
