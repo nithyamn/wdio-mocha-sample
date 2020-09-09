@@ -67,7 +67,7 @@ exports.config = {
         [
           'browserstack',
           {
-            outputDir: './',
+            outputDir: './test-reports',
           }
         ]
     ],
