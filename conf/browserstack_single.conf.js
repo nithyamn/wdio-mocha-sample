@@ -87,18 +87,18 @@ exports.config = {
         const testName = '"******** Running test: ' + test.title + ' *******";';
         browser.execute(testName)
         console.log('--- Running test: ' + testName)
-    },
-
-    afterTest: function (test,spec) {
-        const filename =  spec[0];
-        //const projectname = `test_${new Date().toLocaleDateString()}`;
-        var request = require('request');
-        const sessionid = browser.sessionId;
-        console.log("Session ID printed: "+sessionid);
-        request({
-            uri: "https://nithyamani3:tnvzsrdzaKJQWhDaAVub@api.browserstack.com/automate/sessions/"+sessionid+".json", 
-            method:"PUT", 
-            form:{"status":"failed"}
-        })
     }
+
+//     afterTest: function (test,spec) {
+//         const filename =  spec[0];
+//         //const projectname = `test_${new Date().toLocaleDateString()}`;
+//         var request = require('request');
+//         const sessionid = browser.sessionId;
+//         console.log("Session ID printed: "+sessionid);
+//         request({
+//             uri: "https://username:accesskey@api.browserstack.com/automate/sessions/"+sessionid+".json", 
+//             method:"PUT", 
+//             form:{"status":"failed"}
+//         })
+//     }
 }
