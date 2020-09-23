@@ -1,7 +1,6 @@
 node {  
     try {
-    properties([parameters([credentials(credentialType: 'com.browserstack.automate.ci.jenkins.BrowserStackCredentials', defaultValue: 'new key', description: '', name: '', required: false)])])
-  
+    properties([parameters([credentials(credentialType: 'com.browserstack.automate.ci.jenkins.BrowserStackCredentials', defaultValue: 'new key', description: '', name: 'BROWSERSTACK_USERNAME', required: false)])])
     stage('Pull repository from GitHub') {
         git url: 'https://github.com/nithyamn/wdio-mocha-sample.git'
     }
