@@ -65,7 +65,7 @@ exports.config = {
     // },
     reporters: [
         [
-          'junit',
+          'browserstack',
           {
             outputDir: './',
           }
